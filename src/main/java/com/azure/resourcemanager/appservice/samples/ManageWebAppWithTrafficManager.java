@@ -73,31 +73,31 @@ public final class ManageWebAppWithTrafficManager {
             //============================================================
             // Purchase a domain (will be canceled for a full refund)
 
-            System.out.println("Purchasing a domain " + domainName + "...");
-
+//            System.out.println("Purchasing a domain " + domainName + "...");
+//
             azureResourceManager.resourceGroups().define(rgName)
                 .withRegion(Region.US_WEST)
                 .create();
-
-            domain = azureResourceManager.appServiceDomains().define(domainName)
-                .withExistingResourceGroup(rgName)
-                .defineRegistrantContact()
-                .withFirstName("Jon")
-                .withLastName("Doe")
-                .withEmail("jondoe@contoso.com")
-                .withAddressLine1("123 4th Ave")
-                .withCity("Redmond")
-                .withStateOrProvince("WA")
-                .withCountry(CountryIsoCode.UNITED_STATES)
-                .withPostalCode("98052")
-                .withPhoneCountryCode(CountryPhoneCode.UNITED_STATES)
-                .withPhoneNumber("4258828080")
-                .attach()
-                .withDomainPrivacyEnabled(true)
-                .withAutoRenewEnabled(false)
-                .create();
-            System.out.println("Purchased domain " + domain.name());
-            Utils.print(domain);
+//
+//            domain = azureResourceManager.appServiceDomains().define(domainName)
+//                .withExistingResourceGroup(rgName)
+//                .defineRegistrantContact()
+//                .withFirstName("Jon")
+//                .withLastName("Doe")
+//                .withEmail("jondoe@contoso.com")
+//                .withAddressLine1("123 4th Ave")
+//                .withCity("Redmond")
+//                .withStateOrProvince("WA")
+//                .withCountry(CountryIsoCode.UNITED_STATES)
+//                .withPostalCode("98052")
+//                .withPhoneCountryCode(CountryPhoneCode.UNITED_STATES)
+//                .withPhoneNumber("4258828080")
+//                .attach()
+//                .withDomainPrivacyEnabled(true)
+//                .withAutoRenewEnabled(false)
+//                .create();
+//            System.out.println("Purchased domain " + domain.name());
+//            Utils.print(domain);
 
             //============================================================
             // Create a self-singed SSL certificate
@@ -250,12 +250,12 @@ public final class ManageWebAppWithTrafficManager {
         return azureResourceManager.webApps().define(name)
                 .withExistingWindowsPlan(plan)
                 .withExistingResourceGroup(rgName)
-                .withManagedHostnameBindings(domain, name)
-                .defineSslBinding()
-                    .forHostname(name + "." + domain.name())
-                    .withPfxCertificateToUpload(new File(pfxPath), CERT_PASSWORD)
-                    .withSniBasedSsl()
-                    .attach()
+//                .withManagedHostnameBindings(domain, name)
+//                .defineSslBinding()
+//                    .forHostname(name + ".timoknapp.com")
+//                    .withPfxCertificateToUpload(new File(pfxPath), CERT_PASSWORD)
+//                    .withSniBasedSsl()
+//                    .attach()
                 .defineSourceControl()
                     .withPublicGitRepository("https://github.com/jianghaolu/azure-site-test")
                     .withBranch("master")

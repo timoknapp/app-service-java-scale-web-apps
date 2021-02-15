@@ -20,6 +20,11 @@ extensions:
    - Create a traffic manager in front of the web apps
    - Scale up the app service plans to twice the capacity
  
+## Setting up Environement variables
+
+- `AZURE_CLIENT_ID`
+- `AZURE_TENANT_ID`
+- `AZURE_SUBSCRIPTION_ID`
 
 ## Running this Sample ##
 
