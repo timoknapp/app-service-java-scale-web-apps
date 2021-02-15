@@ -155,13 +155,13 @@ public final class ManageWebAppWithTrafficManager {
             System.out.println("Created web app " + app3.name());
             Utils.print(app3);
 
-            System.out.println("Creating another web app " + app3Name + "...");
+            System.out.println("Creating another web app " + app4Name + "...");
             WebApp app4 = createWebApp(app4Name, plan1);
 
             System.out.println("Created web app " + app4.name());
             Utils.print(app4);
 
-            System.out.println("Creating another web app " + app3Name + "...");
+            System.out.println("Creating another web app " + app5Name + "...");
             WebApp app5 = createWebApp(app5Name, plan1);
 
             System.out.println("Created web app " + app5.name());
